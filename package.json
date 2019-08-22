@@ -12,9 +12,14 @@
     "nodemailer": "^6.3.0",
     "path": "^0.12.7"
   },
+  "engines": {
+    "node": ">=v10.16.3",
+    "npm": ">6.9.0"
+  },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
   },
   "author": "Athar",
   "license": "ISC"
