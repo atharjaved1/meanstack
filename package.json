@@ -7,10 +7,13 @@
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "jitsu": "^0.15.0",
+    "mine": "^0.1.0",
     "mongoose": "^5.6.10",
-    "nodemon": "^1.19.1",
     "nodemailer": "^6.3.0",
-    "path": "^0.12.7"
+    "nodemon": "^1.19.1",
+    "path": "^0.12.7",
+    "utility": "^1.16.1"
   },
   "engines": {
     "node": ">=v10.16.3",
