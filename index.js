@@ -41,7 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/api', formrouter);
 
 //listen at port 3000 listen has two parameter
-app.listen(process.env.port || port, ()=>{
+app.listen(process.env.PORT || port, ()=>{
     console.log(`This project is running on this ${port}`)
 })
 
