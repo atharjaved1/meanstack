@@ -6,7 +6,7 @@ var mongoose = require('mongoose');
 
 var formrouter = require('./routes/reservation_form_routes');
 
-const port = 3000;
+const port = 5000;
 
 //express
 var app = express();
@@ -23,25 +23,25 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 //database connection
-mongoose.connection.openUri('mongodb://localhost:27017/reservation', {useNewUrlParser:true})
+// mongoose.connection.openUri('mongodb://localhost:27017/reservation', {useNewUrlParser:true})
 
-mongoose.connection.on('connected', ()=>{
-    console.log("Connected to DB");
-});
+// mongoose.connection.on('connected', ()=>{
+//     console.log("Connected to DB");
+// });
 
 
-mongoose.connection.on('error', (err)=>{
-    if(err){
-        console.log(`Error While connected to DB ${err}`);
-    }
-})
+// mongoose.connection.on('error', (err)=>{
+//     if(err){
+//         console.log(`Error While connected to DB ${err}`);
+//     }
+// })
 
 //end datanase connection
 
 app.use('/api', formrouter);
 
 //listen at port 3000 listen has two parameter
-app.listen(port, ()=>{
+app.listen(process.env.port || port, ()=>{
     console.log(`This project is running on this ${port}`)
 })
 
