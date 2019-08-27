@@ -23,25 +23,25 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 //database connection
-// mongoose.connection.openUri('mongodb://localhost:27017/reservation', {useNewUrlParser:true})
+mongoose.connection.openUri('mongodb://localhost:27017/reservation', {useNewUrlParser:true})
 
-// mongoose.connection.on('connected', ()=>{
-//     console.log("Connected to DB");
-// });
+mongoose.connection.on('connected', ()=>{
+    console.log("Connected to DB");
+});
 
 
-// mongoose.connection.on('error', (err)=>{
-//     if(err){
-//         console.log(`Error While connected to DB ${err}`);
-//     }
-// })
+mongoose.connection.on('error', (err)=>{
+    if(err){
+        console.log(`Error While connected to DB ${err}`);
+    }
+})
 
 //end datanase connection
 
 app.use('/api', formrouter);
-app.use('/test', (req, res,next)=>{
-    res.send("Hello again hi");
-})  
+// app.use('/test', (req, res,next)=>{
+//     res.send("Hello again hi");
+// })  
 
 //listen at port 3000 listen has two parameter
 app.listen(process.env.PORT || port, ()=>{

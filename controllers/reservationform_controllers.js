@@ -33,7 +33,7 @@ const savereservationDetails = (req, res, next) =>{
 
 // Find Reservation  
 const findreservation = (req, res, next) =>{
-    form_model.find((err,getallreservation)=>{
+    form_model.find((err,getallreservation)=>{  
         if(err){
             res.send(err);
         }
@@ -58,6 +58,7 @@ const deleteReservation = (req, res, next) =>{
         })
     })
 }
+
  // hello
 // update record
 
