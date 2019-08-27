@@ -1,8 +1,8 @@
 # Reservation Project Crud 
 
 
-##Route (Save User Record)
-#localhost:5000/api/savereservation
+## Route (Save User Record)
+# localhost:5000/api/savereservation
 
 {
 	"name":"Haseeb Khan",
@@ -18,8 +18,8 @@
 }
 
 
-##Route (Get All User Record)
-#localhost:5000/api/findeservationsAllRecords
+## Route (Get All User Record)
+# localhost:5000/api/findeservationsAllRecords
 
 
 
@@ -32,7 +32,7 @@
 
 
 ## updateReservation Record
-##localhost:5000/api/updateReservation
+## localhost:5000/api/updateReservation
 
 {
 	"id":"5d5d795ac4d5171de4fe553b",
