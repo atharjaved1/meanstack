@@ -1,0 +1,64 @@
+ 
+<!-- // replace everything in this file with this -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item" *ngFor="let menu of menus">
+              <a class="nav-link" href="#">{{menu}} </a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+
+<br/>
+<!-- 
+<input type="button" value="show me" (click)="showName()"/> 
+<p>{{result}}</p> -->
+
+<!-- 
+<input type="text" [(ngModel)]="num1"/> <br>
+
+<input type="text" [(ngModel)]="num2" /> <br>
+
+<h1> {{add()}} <h2>
+
+
+
+<input type="text" [(ngModel)]="addtwonum"/>
+
+<h1>{{addtwo()}}</h1> -->
+
+<div class="container">
+
+<h1>Calulator</h1>
+
+<input type="text" [(ngModel)]="num1"/> <br/>
+<input type="text" [(ngModel)]="num2"/> <br/>
+
+<!-- <input type="button" value="Add" (click)="add()"/>
+<input type="button" value="Subtract" (click)="sub()"/>
+<input type="button" value="Multiply" (click)="multiply()"/>
+<input type="button" value="Divide" (click)="divide()"/> -->
+
+<h4><span>Add: Result</span> {{add()}}        </h4>
+<h4><span>Sub: Result</span>{{sub()}}</h4>
+<h4><span>Multiply Result</span> {{multiply()}}</h4>
+<h4><span>Divide Result</span> {{divide()}}</h4>
+
+</div>
+
+<div class="container">
+
+<h4>Please type Experssion (+,-,*,/,)</h4>
+
+<input type="text" [(ngModel)]="getexp"/>
+
+<h4><span>Result</span>: {{mathimeticalexp()}} </h4>
+
+</div>
