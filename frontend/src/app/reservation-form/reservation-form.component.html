@@ -1,0 +1,142 @@
+<!-- Start Form Container -->
+<div class="container pt-5 mr-0">
+    <p class="h2 text-center">Reservation Form</p>
+    <!-- Start Form -->
+    <form #Form='ngForm'>
+        <!-- Start Row -->
+        <div class="row">
+            <!-- Name -->
+            <div class="col-8 offset-1">
+                <div class="col-3 pt-2 float-left">
+                    <label>Name *</label>
+                </div>
+                <input type="text" name='mname' [(ngModel)]='mname' placeholder="Name"
+                    class=" float-right form-control bg-light border-0 w-75" />
+            </div>
+            <!-- End Name -->
+
+            <!-- Email -->
+            <div class="col-8 offset-1 mt-3">
+                <div class="col-3 pt-2 float-left">
+                    <label>Email *</label>
+                </div>
+                <input type="text" name='email' [(ngModel)]='email' placeholder="Email *"
+                    class=" float-right form-control bg-light border-0 w-75" />
+            </div>
+            <!-- End Email -->
+
+            <!-- Room Type -->
+            <div class="col-8 offset-1 mt-3">
+                <div class="col-3 pt-2 float-left">
+                    <label>Room Type</label>
+                </div>
+                <select [(ngModel)]='room' name="room" class="float-right bg-light form-control w-75">
+                    <option>Select </option>
+                    <option *ngFor="let r of roomtypes" value="{{r}}">{{r}}</option>
+                </select>
+            </div>
+            <!-- End Room Type -->
+        
+            <!-- Arrival Date -->
+            <div class="col-8 offset-1 mt-3">
+                <div class="col-3 pt-2 float-left">
+                    <label>Arrival Date *</label>
+                </div>
+                <input type="text" [(ngModel)]='arrivaldate' name="arrivaldate"
+                    class="float-right form-control bg-light border-0 w-75" />
+            </div>
+            <!-- End Arrival Date -->
+
+            <!-- Number Of Guest -->
+            <div class="col-8 offset-1 mt-3">
+                <div class="col-3 pt-2 float-left">
+                    <label>Number Of Guest *</label>
+                </div>
+                <input type="number" [(ngModel)]='numberofguest' name="numberofguest"
+                    class="form-control bg-light border-0 w-25" />
+            </div>
+            <!-- End Number of Guest -->
+
+            <!-- Free Pickup -->
+            <div class="col-8 offset-1 mt-3">
+                <div class="col-3 pt-3 float-left">
+                    <label>Free Pickup *</label>
+                </div>
+                <input type="radio" name="yes" class="mt-4 bg-light border-primary" />
+                Yes
+                <input type="radio" name="yes" class="mr-2 bg-light border-primary" />
+                No
+            </div>
+            <!-- End Free Pickup -->
+
+            <!-- Flight Number -->
+            <div class="col-8 offset-1 mt-3">
+                <div class="col-3 pt-2 float-left">
+                    <label>Flight Number</label>
+                </div>
+
+                <input type="text" [(ngModel)]='flightnumber' name="flightnumber" placeholder="Flight Number"
+                    class=" float-right form-control bg-light border-0 w-75" />
+            </div>
+             <!-- End Flight Number -->
+
+            <!-- Special Request -->
+            <div class="col-8 offset-1 mt-3">
+                <div class="col-3 mt-3 float-left">
+                    <label>Special Request</label>
+                </div>
+                <textarea placeholder="type herer" [(ngModel)]='specialrequest' name="specialrequest"
+                    class="h-75 float-right form-control bg-light border-0 w-75"></textarea>
+            </div>
+            <!-- End Special Request -->
+
+            <!-- AddReservation Event -->
+            <div class="col-8 offset-1 mb-2">
+                <input type="button" value="Submit" (click)="AddReservation()"
+                    class="bg-primary pl-3 pr-3 pt-1 pb-1 float-right mr-1 mt-4 border-0" />
+            </div>
+            <!-- End AddReservation Event-->
+        </div>
+        <!-- End Row -->
+    </form>
+    <!-- End Forms -->
+</div>
+<!-- End Form Container -->
+
+<!-- Report View -->
+<div class="container-fluid border w-75 pt-5">
+    <h1 class="text-center mb-3">Reservation Form Data</h1>
+    <table class="table">
+        <thead>
+            <tr>
+
+                <th class="w-10">Name</th>
+                <th class="w-25">Email *</th>
+                <th class="w-15">Room Type</th>
+                <th class="w-15">Arrival Date</th>
+                <th class="w-20">Number of Guest</th>
+                <th class="w-15">Free Pickup</th>
+                <th class="w-15">Flight Number</th>
+                <th class="w-15">Special Request</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let reservation of reservations let index=index">
+                <td>{{reservation.mname}}</td>
+                <td>{{reservation.email}}</td>
+                <td>{{reservation.room}}</td>
+                <td>{{reservation.arrivaldate}}</td>
+                <td>{{reservation.numberofguest}}</td>
+                <td>{{reservation.freepickup}}</td>
+                <td>{{reservation.flightnumber}}</td>
+                <td>{{reservation.specialrequest}}</td>
+
+                <td class="d-flex"><input type="button" class="btn btn-sm" value="X" (click)=' DeleteReservation(index)'>
+                     <input type="button" class="btn btn-sm" value="&#x270f;" (click)=' editReservation()'>
+                     <input type="button" class="btn btn-sm" value="&#xe173;" (click)=' updateReservation()'>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- End Report View -->

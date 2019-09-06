@@ -4,11 +4,13 @@ import {FormsModule} from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
+import { ReservationFormComponent } from './reservation-form/reservation-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    NavigationComponent
+    NavigationComponent,
+    ReservationFormComponent
   ],
   imports: [
     BrowserModule,
@@ -16,6 +18,6 @@ import { NavigationComponent } from './navigation/navigation.component';
     FormsModule
   ],
   providers: [],
-  bootstrap: [AppComponent,NavigationComponent]
+  bootstrap: [AppComponent,NavigationComponent,ReservationFormComponent]
 })
 export class AppModule { }

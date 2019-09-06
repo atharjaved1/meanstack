@@ -16,7 +16,49 @@
       </nav>
 
 
-<br/>
+<br/> 
+    <form #Form ='ngForm'>   
+            <label>Name</label>  
+            <input type="text"  name='mname' [(ngModel)]='mname'>  <br>
+            <label>Father Name</label> 
+            <input type="text"  name='email' [(ngModel)]='email'>   <br>
+            <label>Mobile</label> 
+            <input type="text"  name='Adress' [(ngModel)]='Adress'> <br>
+
+            <label>Cities</label>
+
+            <select [(ngModel)]='cityname' name="cityname"> 
+              <option value="">Select City</option>
+              <option *ngFor="let c of city" value="{{c}}">{{c}}</option>
+            </select>
+
+            <input type="button" value="Add" (click)='AddStudent()'>
+    </form>
+    
+    <h4>All Students</h4>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>Name</th>
+          <th>Father Name</th>
+          <th>Mobile</th>
+          <th>City</th>  
+        </tr>
+      </thead>
+      <tbody> 
+         <tr *ngFor="let student of students"> 
+          <td>{{student.mname}}</td>
+          <td>{{student.fname}}</td>
+          <td>{{student.Adress}}</td> 
+          <td>{{student.cityname}}</td> 
+          <td><input type="button" value="Delete" (click)='DeleteStudent(index)'> </td>
+        </tr> 
+      </tbody>
+    </table>
+     
+
+    <br/><br/><br/>
 <!-- 
 <input type="button" value="show me" (click)="showName()"/> 
 <p>{{result}}</p> -->
@@ -34,7 +76,7 @@
 
 <h1>{{addtwo()}}</h1> -->
 
-<div class="container">
+<div class="container mb-5" >
 
 <h1>Calulator</h1>
 
@@ -53,7 +95,7 @@
 
 </div>
 
-<div class="container">
+<div class="container mt-10">
 
 <h4>Please type Experssion (+,-,*,/,)</h4>
 
@@ -62,3 +104,4 @@
 <h4><span>Result</span>: {{mathimeticalexp()}} </h4>
 
 </div>
+

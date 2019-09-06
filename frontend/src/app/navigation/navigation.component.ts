@@ -14,6 +14,33 @@ export class NavigationComponent implements OnInit {
     public addtwonum='';
     public getexp='';
     // public result;
+    
+    public city = ['Faislaabad', 'Lahore']
+    public students = Array(); 
+    public mname : String;
+    public fname : String; 
+    public Adress : String;
+    
+  AddStudent(){ 
+    let newStudent = {  
+      mname:this.mname,
+      fname:this.fname,
+      Adress:this.Adress,
+    } 
+      this.mname='';
+      this.fname='';
+      this.Adress='';
+      this.students.push(newStudent);
+      console.log(this.students)
+    }
+ 
+  DeleteStudent(){
+    
+    this.students.pop(); 
+    
+}
+
+ 
 
   constructor() { }
 
