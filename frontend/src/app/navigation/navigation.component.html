@@ -17,14 +17,14 @@
 
 
 <br/> 
-    <form #Form ='ngForm'>   
+<div class="row">
+    <form #Form ='ngForm'>        
             <label>Name</label>  
             <input type="text"  name='mname' [(ngModel)]='mname'>  <br>
             <label>Father Name</label> 
             <input type="text"  name='email' [(ngModel)]='email'>   <br>
             <label>Mobile</label> 
             <input type="text"  name='Adress' [(ngModel)]='Adress'> <br>
-
             <label>Cities</label>
 
             <select [(ngModel)]='cityname' name="cityname"> 
@@ -34,7 +34,7 @@
 
             <input type="button" value="Add" (click)='AddStudent()'>
     </form>
-    
+  </div>  
     <h4>All Students</h4>
     <table border="1">
       <thead>
