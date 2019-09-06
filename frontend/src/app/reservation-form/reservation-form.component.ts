@@ -60,12 +60,22 @@ export class ReservationFormComponent implements OnInit {
         });
       }
       //Update reservation
-      updateReservation(){
-        this.reservations = this.reservations.filter((value,key)=>{
-          if(value.id == value.id){
-            value.name = value.name;
+      // updateReservation(){
+      //   this.reservations = this.reservations.filter((value,key)=>{
+      //     if(value.id == value.id){
+      //       value.name = value.name;
+      //     }
+      //     return true;
+      //   });
+      // }
+      updateReservation(): void {
+        this.reservations.forEach(item => {
+          if (!this.reservations[item.key]) {
+            this.reservations[item.key] = {
+              edit: false,
+              data: item
+            };
           }
-          return true;
         });
       }
 
