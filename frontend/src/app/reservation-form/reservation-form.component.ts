@@ -51,11 +51,18 @@ export class ReservationFormComponent implements OnInit {
       }
 
       //Edit Reservation
-      editReservation(){
+      editReservation(index){
         this.reservations = this.reservations.filter((value,key)=>{
-          if(value.id == value.id){
-            value.name = value.name;
-          }
+          
+          this.mname = value[index].mname;
+          this.email = value[index].email;
+          this.room = value[index].room;
+          this.arrivaldate = value[index].arrivaldate;
+          this.numberofguest = value[index].numberofguest;
+          this.freepickup = value[index].freepickup;
+          this.flightnumber = value[index].flightnumber;
+          this.specialrequest = value[index].specialrequest;
+      
           return true;
         });
       }
@@ -68,13 +75,20 @@ export class ReservationFormComponent implements OnInit {
       //     return true;
       //   });
       // }
-      updateReservation(): void {
+      updateReservation(index): void {
         this.reservations.forEach(item => {
           if (!this.reservations[item.key]) {
-            this.reservations[item.key] = {
-              edit: false,
+            this.reservations[item.key] = { 
               data: item
             };
+            this.mname = item[index].mname;
+            this.email = item[index].email;
+            this.room = item[index].room;
+            this.arrivaldate = item[index].arrivaldate;
+            this.numberofguest = item[index].numberofguest;
+            this.freepickup = item[index].freepickup;
+            this.flightnumber = item[index].flightnumber;
+            this.specialrequest = item[index].specialrequest;
           }
         });
       }
