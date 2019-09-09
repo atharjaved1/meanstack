@@ -4,14 +4,14 @@
 
 Validation on Below Field
 
-Name (textBox)
-Email (textBox)
-Room Type (Select Box)
-Arrival Date * 
-Number Of Guest (TextBox)*
-Free Pickup (Radio Button)*
-Flight Number (Text Box with type number)
-Flight Number (Textarea)
+#### Name (textBox)
+#### Email (textBox)
+#### Room Type (Select Box)
+#### Arrival Date * 
+#### Number Of Guest (TextBox)*
+#### Free Pickup (Radio Button)*
+#### Flight Number (Text Box with type number)
+#### Flight Number (Textarea)
   
 
 
