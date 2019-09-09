@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { NgxSpinnerModule } from "ngx-spinner";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './navigation/navigation.component';
@@ -15,7 +16,10 @@ import { ReservationFormComponent } from './reservation-form/reservation-form.co
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    NgxSpinnerModule
+
   ],
   providers: [],
   bootstrap: [AppComponent,NavigationComponent,ReservationFormComponent]
