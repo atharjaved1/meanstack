@@ -1,4 +1,7 @@
+<!-- Loader Animatioin -->
 <ngx-spinner></ngx-spinner>
+<!-- End Loader Animation -->
+
 <!-- Start Form Container -->
 <div class="container pt-5 mr-0">
     <p class="h2 pb-5 text-center">Reservation Form</p>
@@ -7,20 +10,18 @@
     <form [formGroup]="myForm" (ngSubmit)='onSubmit()'>
         <!-- Start Row -->
         <div class="row">
+
             <!-- Name -->
-            <div class="col-8 offset-1"> 
+            <div class="col-8 offset-1">
                 <div class="col-3 pt-2 float-left">
                     <label>Name *</label>
                 </div>
-                <input type="text" formControlName="name" 
-                    [ngClass]="{'is-invalid': myForm.get('name').touched && myForm.get('name').invalid}"
-                    class=" float-right form-control bg-light border-0 w-75" />
+                <input type="text" formControlName="name" [ngClass]="{'is-invalid': myForm.get('name').touched && myForm.get('name').invalid}" class=" float-right form-control bg-light border-0 w-75" />
 
-                    <div class="invalid-feedback">
-                            Field is required
-                    </div> 
+                <div class="invalid-feedback">
+                    Field is required
+                </div>
             </div>
-           
             <!-- End Name -->
 
             <!-- Email -->
@@ -28,21 +29,17 @@
                 <div class="col-3 pt-2 float-left">
                     <label>Email *</label>
                 </div>
-                <input type="text" formControlName="email" placeholder="Email *"  
-                    [ngClass]="{'is-invalid': myForm.get('email').touched && myForm.get('email').invalid}"
-                    class=" float-right form-control bg-light border-0 w-75" />
+                <input type="text" formControlName="email" placeholder="Email *" [ngClass]="{'is-invalid': myForm.get('email').touched && myForm.get('email').invalid}" class=" float-right form-control bg-light border-0 w-75" />
 
-                 <div *ngIf="myForm.get('email').touched && myForm.get('email').invalid" class="invalid-feedback">
+                <div *ngIf="myForm.get('email').touched && myForm.get('email').invalid" class="invalid-feedback">
                     <div *ngIf="myForm.get('email').errors.required">
-                            Email is required
+                        Email is required
                     </div>
                     <div *ngIf="myForm.get('email').errors.pattern">
-                            Please enter your valid email address
+                        Please enter your valid email address
                     </div>
                 </div>
-
             </div>
-             
             <!-- End Email -->
 
             <!-- Room Type -->
@@ -50,69 +47,52 @@
                 <div class="col-3 pt-2 float-left">
                     <label>Room Type</label>
                 </div>
-                <select name="room" formControlName="room"
-                    class="float-right bg-light form-control w-75"
-                    [ngClass]="{'is-invalid': myForm.get('room').touched && myForm.get('room').invalid}">
-                    
+                <select name="room" formControlName="room" class="float-right bg-light form-control w-75" [ngClass]="{'is-invalid': myForm.get('room').touched && myForm.get('room').invalid}">
                     <option>Select </option>
-                    <option *ngFor="let r of roomtypes" value="{{r}}">{{r}}</option>
-
+                    <option *ngFor="let r of room" value="{{r}}">{{r}}</option>
                 </select>
-
                 <div class="invalid-feedback">
-                        Please Select City
+                    Please Select City
                 </div>
-
             </div>
             <!-- End Room Type -->
-        
+
             <!-- Arrival Date -->
             <div class="col-8 offset-1 mt-3">
                 <div class="col-3 pt-2 float-left">
                     <label>Arrival Date *</label>
                 </div>
-                <input type="text" name="arrivaldate" formControlName="arrivaldate"
-                    [ngClass]="{'is-invalid': myForm.get('arrivaldate').touched && myForm.get('arrivaldate').invalid}"
-                    class="float-right form-control bg-light border-0 w-75" 
-                />
-
-                    <div class="invalid-feedback">
-                          Please enter a valid Date e.g dd/mm/yyyy
-                    </div>
+                <input type="text" name="arrivaldate" formControlName="arrivaldate" [ngClass]="{'is-invalid': myForm.get('arrivaldate').touched && myForm.get('arrivaldate').invalid}" class="float-right form-control bg-light border-0 w-75" />
+                <div class="invalid-feedback">
+                    Please enter a valid Date e.g dd/mm/yyyy
+                </div>
             </div>
             <!-- End Arrival Date -->
 
             <!-- Number Of Guest -->
-            <div class="col-8 offset-1 mt-3">                
+            <div class="col-8 offset-1 mt-3">
                 <div class="col-3 pt-2 float-left">
                     <label>Number Of Guest *</label>
                 </div>
-                <input type="number" name="numberofguest" formControlName="numberofguest"
-                    [ngClass]="{'is-invalid': myForm.get('numberofguest').touched && myForm.get('numberofguest').invalid}"
-                    class="form-control bg-light border-0 w-25"
-                />
+                <input type="number" name="numberofguest" formControlName="numberofguest" [ngClass]="{'is-invalid': myForm.get('numberofguest').touched && myForm.get('numberofguest').invalid}" class="form-control bg-light border-0 w-25" />
                 <div class="invalid-feedback offset-3 pl-0 col-8">
-                        Please enter a number of Guest.
+                    Please enter a number of Guest.
                 </div>
             </div>
             <!-- End Number of Guest -->
 
             <!-- Free Pickup -->
             <div class="col-8 offset-1 mt-3">
-                <div class="col-3 pt-3 float-left">
+                <div class="col-3 float-left">
                     <label>Free Pickup *</label>
                 </div>
-                    <input type="radio" value="Yes" name="gender" formControlName="gender" 
-                        [ngClass]="{'is-invalid': myForm.get('gender').touched && myForm.get('gender').invalid}"
-                    > Yes
-                    <input type="radio" value="No" name="gender" formControlName="gender"
-                        [ngClass]="{'is-invalid': myForm.get('gender').touched && myForm.get('gender').invalid}"
-                    > No
-                    <div *ngIf="myForm.get('gender').touched && myForm.get('gender').invalid" class="invalid-feedback">                    
-                        <div *ngIf="myForm.get('gender').errors.required" > 
-                            Gender required. 
-                        </div> 
+                <input type="radio" value="Yes" name="gender" formControlName="gender" [ngClass]="{'is-invalid': myForm.get('gender').touched && myForm.get('gender').invalid}"> Yes
+                <input type="radio" value="No" name="gender" formControlName="gender" [ngClass]="{'is-invalid': myForm.get('gender').touched && myForm.get('gender').invalid}"> No
+                <div *ngIf="myForm.get('gender').touched && myForm.get('gender').invalid" class="invalid-feedback">
+                    <div *ngIf="myForm.get('gender').errors.required">
+                        Gender required.
                     </div>
+                </div>
             </div>
             <!-- End Free Pickup -->
 
@@ -121,31 +101,24 @@
                 <div class="col-3 pt-2 float-left">
                     <label>Flight Number</label>
                 </div>
-
-                <input type="text"  name="flightnumber" formControlName="flightnumber" placeholder="Flight Number"
-                    [ngClass]="{'is-invalid': myForm.get('flightnumber').touched && myForm.get('flightnumber').invalid}"
-                    class=" float-right form-control bg-light border-0 w-75" 
-                />
-                    <div class="invalid-feedback">
-                            Please enter your flight number
-                    </div>
+                <input type="text" name="flightnumber" formControlName="flightnumber" placeholder="Flight Number" [ngClass]="{'is-invalid': myForm.get('flightnumber').touched && myForm.get('flightnumber').invalid}" class=" float-right form-control bg-light border-0 w-75" />
+                <div class="invalid-feedback">
+                    Please enter your flight number
+                </div>
             </div>
-             <!-- End Flight Number -->
+            <!-- End Flight Number -->
 
             <!-- Special Request -->
             <div class="col-8 offset-1 mt-3">
                 <div class="row">
-                    <div class="col-3 mt-3 pl-5">
+                    <div class="col-3 mt-3 pl-4">
                         <label>Special Request</label>
                     </div>
-                    
-                    <textarea placeholder="type herer"  name="specialrequest" formControlName="specialrequest" 
-                    [ngClass]="{'is-invalid': myForm.get('specialrequest').touched && myForm.get('specialrequest').invalid}"
-                        class="h-75 float-right form-control bg-light border-0 w-75">
+                    <textarea placeholder="type herer" name="specialrequest" formControlName="specialrequest" [ngClass]="{'is-invalid': myForm.get('specialrequest').touched && myForm.get('specialrequest').invalid}" class="h-75 float-right form-control bg-light border-0 w-75">
                     </textarea>
 
                     <div class="invalid-feedback offset-3">
-                            Please enter your Special Request
+                        Please enter your Special Request
                     </div>
                 </div>
             </div>
@@ -153,12 +126,9 @@
 
             <!-- AddReservation Event -->
             <div class="col-8 offset-1 mb-2">
-               
-                <input type="submit" value="Submit" [disabled]="myForm.invalid"
-                    class="bg-primary text-white btn btn-md pl-3 pr-3 pt-1 pb-1 float-right mr-1 mt-4 border-0" />
+                <input type="submit" value="Submit" [disabled]="myForm.invalid" class="bg-primary text-white btn btn-md pl-3 pr-3 pt-1 pb-1 float-right mr-1 mt-4 border-0" />
             </div>
-            {{myForm.invalid}}
-            {{myForm.value | json}}
+            {{myForm.invalid}} {{myForm.value | json}}
             <!-- End AddReservation Event-->
         </div>
         <!-- End Row -->
@@ -172,7 +142,7 @@
     <h1 class="text-center mb-3">Reservation Form Data</h1>
     <table class="table">
         <thead class="text-center">
-            <tr> 
+            <tr>
                 <th>Name</th>
                 <th>Email *</th>
                 <th>Room Type</th>
@@ -184,7 +154,7 @@
             </tr>
         </thead>
         <tbody class="text-center">
-            <tr *ngFor="let reservation of reservationRecord let index=index">
+            <tr *ngFor="let reservation of reservations let index=index">
                 <td>{{reservation.name}}</td>
                 <td>{{reservation.email}}</td>
                 <td>{{reservation.room}}</td>
@@ -192,10 +162,11 @@
                 <td>{{reservation.numberofguest}}</td>
                 <td>{{reservation.gender}}</td>
                 <td>{{reservation.flightnumber}}</td>
-                <td>{{reservation.specialrequest}}</td> 
-                <td class="d-flex"><input type="button" class="btn btn-sm" value="X" (click)=' DeleteReservation(index)'>
-                     <input type="button" class="btn btn-sm" value="&#x270f;" (click)=' editreservation(index)'>
-                     <input type="button" class="btn btn-sm" value="&#xe173;" (click)=' updateReservation(index)'>
+                <td>{{reservation.specialrequest}}</td>
+                <td class="d-flex">
+                    <input type="button" class="btn btn-sm" value="X" (click)=' DeleteReservation(index)'>
+                    <input type="button" class="btn btn-sm" value="&#x270f;" (click)=' editreservation(index)'>
+                    <input type="button" class="btn btn-sm" value="&#xe173;" (click)=' updateReservation(index)'>
                 </td>
             </tr>
         </tbody>
