@@ -1,3 +1,20 @@
+## Reservation Form Validation with Reactive Forms
+
+### Validation and Crud with reactive forms 
+
+Validation on Below Field
+
+Name (textBox)
+Email (textBox)
+Room Type (Select Box)
+Arrival Date * 
+Number Of Guest (TextBox)*
+Free Pickup (Radio Button)*
+Flight Number (Text Box with type number)
+Flight Number (Textarea)
+  
+
+
 # Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.2.
