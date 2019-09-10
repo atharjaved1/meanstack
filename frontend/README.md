@@ -14,7 +14,7 @@ Validation on Below Field
 #### Flight Number (Textarea)
   
 
-# Show Loader Load Website 
+# Show Loader when Load Website 
 # Frontend
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.2.
