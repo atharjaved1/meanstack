@@ -1,5 +1,8 @@
 <!-- Loader Animatioin -->
-<ngx-spinner></ngx-spinner>
+<ngx-spinner color="fff" [fullScreen] ="true" type="ball-circus">
+        <p class="text-white" > Reservation form Loading... </p>
+</ngx-spinner>
+
 <!-- End Loader Animation -->
 
 <!-- Start Form Container -->
@@ -128,6 +131,7 @@
             <div class="col-8 offset-1 mb-2">
                 <input type="submit" value="Submit" [disabled]="myForm.invalid" class="bg-primary text-white btn btn-md pl-3 pr-3 pt-1 pb-1 float-right mr-1 mt-4 border-0" />
             </div>
+            
             {{myForm.invalid}} {{myForm.value | json}}
             <!-- End AddReservation Event-->
         </div>
@@ -151,6 +155,7 @@
                 <th>Free Pickup</th>
                 <th>Flight Number</th>
                 <th>Special Request</th>
+                <th>Operation</th>
             </tr>
         </thead>
         <tbody class="text-center">
